@@ -2,7 +2,7 @@
 layout: home
 title: MTNetwork Docs
 titleTemplate: false
-description: MTNetwork 的公开文档站，集中说明服务器定位、加入方式、社区规则，以及主站上的公开记录页面。
+description: MTNetwork 的文档站。
 permalink: /
 
 hero:
@@ -25,15 +25,15 @@ hero:
 
 features:
   - icon: 01
-    title: 非营利社区运营
-    details: 服务器以长期生存和社区协作为核心，不以捷径经济和快消玩法为导向。
+    title: 非营利性
+    details: 服务器不包含任何氪金项目，捐赠也无法获得任何特权。
   - icon: 02
-    title: 原版优先生存
-    details: 核心体验保持原版生存节奏，功能增强服务于公平与公开，而不是取代玩法本身。
+    title: 原汁原味
+    details: 仅以趣味性及血压为导向少量修改及拓展原版玩法。
   - icon: 03
-    title: Java 与 Bedrock 同服
-    details: 两端玩家进入同一世界，共享历史、建筑和公开记录。
+    title: 完整互通
+    details: 基岩版用户亦可以进入游戏并获得与Java用户基本一致的游玩体验。
   - icon: 04
-    title: 主站公开记录
-    details: 玩家档案、排行榜、在线状态、热力图和画廊都在主站上持续公开。
+    title: 信息展示
+    details: 玩家档案，排行榜，在线热力图等均在官网进行展示。
 ---
