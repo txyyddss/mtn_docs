@@ -174,6 +174,7 @@ export default defineConfig({
             { text: "公共设施与大型建造", link: "/player-guide/public-builds" },
             { text: "社区与安全", link: "/player-guide/community-safety" },
             { text: "反馈问题", link: "/player-guide/report-issue" },
+            { text: "模组兼容性", link: "/player-guide/mod-compatibility" },
           ],
         },
       ],
