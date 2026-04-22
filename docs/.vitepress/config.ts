@@ -150,56 +150,15 @@ export default defineConfig({
         activeMatch: "^/faq/",
       },
       {
+        text: "腐竹的奇思妙想",
+        link: "/brainstorm/currency",
+        activeMatch: "^/brainstorm/",
+      },
+      {
         text: "主站",
         link: "https://public.mcmtn.net/",
       },
     ],
-    sidebar: {
-      "/getting-started/": [
-        {
-          text: "开始使用",
-          items: [
-            { text: "服务器简介", link: "/getting-started/server-intro" },
-            { text: "加入方式", link: "/getting-started/join" },
-            { text: "Java 与 Bedrock 互通", link: "/getting-started/crossplay" },
-            { text: "基础规则", link: "/getting-started/rules" },
-          ],
-        },
-      ],
-      "/player-guide/": [
-        {
-          text: "玩家指南",
-          items: [
-            { text: "生存理念", link: "/player-guide/survival-philosophy" },
-            { text: "公共设施与大型建造", link: "/player-guide/public-builds" },
-            { text: "社区与安全", link: "/player-guide/community-safety" },
-            { text: "反馈问题", link: "/player-guide/report-issue" },
-            { text: "模组兼容性", link: "/player-guide/mod-compatibility" },
-          ],
-        },
-      ],
-      "/public-records/": [
-        {
-          text: "网站与公开记录",
-          items: [
-            { text: "网站总览", link: "/public-records/site-overview" },
-            { text: "玩家档案", link: "/public-records/player-profiles" },
-            { text: "排行榜", link: "/public-records/leaderboards" },
-            { text: "在线状态与热力图", link: "/public-records/live-status" },
-            { text: "画廊", link: "/public-records/gallery" },
-          ],
-        },
-      ],
-      "/faq/": [
-        {
-          text: "常见问题",
-          items: [
-            { text: "常见问题", link: "/faq/common-questions" },
-            { text: "连接与排错", link: "/faq/troubleshooting" },
-          ],
-        },
-      ],
-    },
     search: {
       provider: "local",
       options: {
