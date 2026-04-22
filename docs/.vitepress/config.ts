@@ -4,7 +4,7 @@ import { teekConfig } from "./teekConfig";
 
 const siteTitle = "MTNetwork Docs";
 const siteDescription =
-  "MTNetwork 的公开文档站，面向玩家与访客，说明加入方式、基础规则，以及 public.mcmtn.net 的公开记录页面。";
+  "MTNetwork 的文档站。";
 const siteUrl = "https://docs.mcmtn.net";
 const ogImage = `${siteUrl}/mtn-brand.png`;
 
@@ -56,7 +56,7 @@ export default defineConfig({
       {
         name: "keywords",
         content:
-          "MTNetwork,Minecraft,生存服,公开文档,玩家指南,Java,Bedrock,公开记录",
+          "MTNetwork,Minecraft,生存服,公开文档,玩家指南,Java,Bedrock",
       },
     ],
     ["meta", { name: "author", content: "MTNetwork Team" }],
@@ -173,6 +173,7 @@ export default defineConfig({
             { text: "生存理念", link: "/player-guide/survival-philosophy" },
             { text: "公共设施与大型建造", link: "/player-guide/public-builds" },
             { text: "社区与安全", link: "/player-guide/community-safety" },
+            { text: "反馈问题", link: "/player-guide/report-issue" },
           ],
         },
       ],
@@ -221,7 +222,7 @@ export default defineConfig({
     editLink: false,
     footer: {
       message:
-        "MTNetwork Docs 面向公开玩家与访客，文档内容以主站实际公告与页面为准。",
+        "MTNetwork 面向玩家的文档站，帮助您更好地了解我们的服务器。",
       copyright: "Copyright © 2024-present MTNetwork",
     },
   },
