@@ -35,10 +35,14 @@ export const teekConfig = defineTeekConfig({
       suffix: "MTNetwork",
     },
   },
+  articleUpdate: {
+    enabled: false,
+  },
   articleShare: { enabled: false },
   vitePlugins: {
     sidebarOption: {
       initItems: false,
+      resolveRule: "rewrites",
     },
   },
 });

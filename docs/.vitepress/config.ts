@@ -1,12 +1,71 @@
+import { readFileSync, readdirSync } from "node:fs";
+import { dirname, relative, resolve, sep } from "node:path";
+import { fileURLToPath } from "node:url";
 import { defineConfig } from "vitepress";
-import llmstxt from "vitepress-plugin-llms";
 import { teekConfig } from "./teekConfig";
 
 const siteTitle = "MTNetwork Docs";
 const siteDescription =
-  "MTNetwork 的文档站。";
+  "MTNetwork 面向玩家与访客的公开文档。";
 const siteUrl = "https://docs.mcmtn.net";
+const logoPath = "/mtn-brand.png";
 const ogImage = `${siteUrl}/mtn-brand.png`;
+const docsRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
+
+const normalizeFilePath = (filePath: string) => filePath.split(sep).join("/");
+
+const walkMarkdownFiles = (directory: string): string[] => {
+  const entries = readdirSync(directory, { withFileTypes: true });
+  const files: string[] = [];
+
+  for (const entry of entries) {
+    if (entry.name === ".vitepress" || entry.name === "public") continue;
+
+    const absolutePath = resolve(directory, entry.name);
+
+    if (entry.isDirectory()) {
+      files.push(...walkMarkdownFiles(absolutePath));
+      continue;
+    }
+
+    if (entry.isFile() && absolutePath.endsWith(".md")) {
+      files.push(absolutePath);
+    }
+  }
+
+  return files;
+};
+
+const extractPermalink = (source: string) => {
+  const frontmatterMatch = source.match(/^---\r?\n([\s\S]*?)\r?\n---/);
+  if (!frontmatterMatch) return;
+
+  const permalinkMatch = frontmatterMatch[1].match(/^permalink:\s*(.+)$/m);
+  if (!permalinkMatch) return;
+
+  return permalinkMatch[1].trim().replace(/^['"]|['"]$/g, "");
+};
+
+const normalizeRewriteTarget = (permalink: string) => {
+  if (permalink === "/") return "index.md";
+  return `${permalink.replace(/^\/+|\/+$/g, "")}.md`;
+};
+
+const createPermalinkRewrites = () => {
+  const rewrites: Record<string, string> = {};
+
+  for (const filePath of walkMarkdownFiles(docsRoot)) {
+    const relativePath = normalizeFilePath(relative(docsRoot, filePath));
+    const permalink = extractPermalink(readFileSync(filePath, "utf8"));
+
+    if (!permalink) continue;
+    rewrites[relativePath] = normalizeRewriteTarget(permalink);
+  }
+
+  return rewrites;
+};
+
+const rewrites = createPermalinkRewrites();
 
 const resolvePagePath = (relativePath: string) => {
   const routePath = `/${relativePath}`
@@ -28,8 +87,9 @@ export default defineConfig({
   cleanUrls: false,
   lastUpdated: true,
   lang: "zh-CN",
+  rewrites,
   head: [
-    ["link", { rel: "icon", type: "image/png", href: "/mtn-brand.png" }],
+    ["link", { rel: "icon", type: "image/png", href: logoPath }],
     ["link", { rel: "preconnect", href: "https://fonts.googleapis.com" }],
     [
       "link",
@@ -114,7 +174,7 @@ export default defineConfig({
     },
   },
   themeConfig: {
-    logo: "/mtn-brand.png",
+    logo: logoPath,
     darkModeSwitchLabel: "主题",
     sidebarMenuLabel: "文档目录",
     returnToTopLabel: "返回顶部",
@@ -182,11 +242,8 @@ export default defineConfig({
     editLink: false,
     footer: {
       message:
-        "MTNetwork 面向玩家的文档站，帮助您更好地了解我们的服务器。",
+        "MTNetwork Docs 面向公开玩家与访客，文档内容以主站实际页面与公告为准。",
       copyright: "Copyright © 2024-present MTNetwork",
     },
-  },
-  vite: {
-    plugins: [llmstxt() as any],
   },
 });
