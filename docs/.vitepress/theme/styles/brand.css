@@ -238,6 +238,130 @@ body {
   font-family: var(--mtn-display);
 }
 
+.mtn-home-doc .vp-doc > h1:first-child {
+  display: none;
+}
+
+.mtn-home-doc .vp-doc > div > h1:first-child {
+  display: none;
+}
+
+.mtn-home-doc .vp-doc > div:first-child {
+  margin-top: 0;
+}
+
+.mtn-home-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(320px, 0.95fr);
+  gap: 1rem;
+  margin: 0 auto 1.4rem;
+}
+
+.mtn-home-hero__body,
+.mtn-home-hero__aside {
+  border: 1px solid var(--mtn-border-light);
+  border-radius: 28px;
+  background: var(--mtn-glass-light);
+  box-shadow: var(--mtn-shadow-light);
+  backdrop-filter: blur(18px);
+}
+
+.mtn-home-hero__body {
+  padding: 1.7rem;
+}
+
+.mtn-home-hero__body h1 {
+  margin: 0;
+  font-family: var(--mtn-display);
+  font-size: clamp(2.8rem, 5vw, 4.6rem);
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+}
+
+.mtn-home-hero__lead {
+  margin: 1rem 0 0;
+  max-width: 44rem;
+  color: var(--vp-c-text-2);
+  font-size: 1.02rem;
+  line-height: 1.9;
+}
+
+.mtn-home-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.35rem;
+}
+
+.mtn-home-hero__action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0.7rem 1.15rem;
+  border: 1px solid var(--mtn-border-light);
+  border-radius: 999px;
+  background: rgba(76, 147, 251, 0.06);
+  color: var(--vp-c-text-1);
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+}
+
+.mtn-home-hero__action:hover {
+  transform: translateY(-2px);
+  border-color: rgba(76, 147, 251, 0.28);
+  background: rgba(76, 147, 251, 0.12);
+}
+
+.mtn-home-hero__action--brand {
+  background: linear-gradient(135deg, var(--vp-c-brand-1), var(--vp-c-brand-2));
+  border-color: transparent;
+  box-shadow: 0 18px 34px rgba(76, 147, 251, 0.24);
+  color: #fff;
+}
+
+.mtn-home-hero__action--brand:hover {
+  background: linear-gradient(135deg, var(--vp-c-brand-2), #235db7);
+}
+
+.mtn-home-hero__aside {
+  display: grid;
+  align-content: start;
+  gap: 1rem;
+  padding: 1.25rem;
+}
+
+.mtn-home-hero__logo {
+  width: min(180px, 42%);
+  justify-self: end;
+  filter: drop-shadow(0 20px 48px rgba(76, 147, 251, 0.24));
+}
+
+.mtn-home-hero__stats {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.mtn-home-hero__stat {
+  display: grid;
+  gap: 0.35rem;
+  padding: 0.95rem 1rem;
+  border-radius: 20px;
+  border: 1px solid var(--mtn-border-light);
+  background: rgba(76, 147, 251, 0.06);
+}
+
+.mtn-home-hero__stat strong {
+  font-family: var(--mtn-display);
+  font-size: 1rem;
+}
+
+.mtn-home-hero__stat span {
+  color: var(--vp-c-text-2);
+  line-height: 1.7;
+}
+
 .mtn-home-shell {
   display: grid;
   gap: 1.2rem;
@@ -344,6 +468,15 @@ body {
 @media (max-width: 960px) {
   .VPNavBar {
     width: calc(100% - 1rem);
+  }
+
+  .mtn-home-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .mtn-home-hero__logo {
+    justify-self: start;
+    width: 132px;
   }
 
   .mtn-home-grid,

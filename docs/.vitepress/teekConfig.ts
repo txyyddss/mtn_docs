@@ -10,7 +10,7 @@ export const teekConfig = defineTeekConfig({
   sidebarTrigger: false,
   windowTransition: false,
   backTop: {
-    enabled: true,
+    enabled: false,
     content: "icon",
   },
   toComment: {

@@ -1,42 +1,54 @@
 ---
-layout: home
+layout: doc
 title: MTNetwork Docs
 titleTemplate: false
 description: MTNetwork 面向玩家与访客的公开文档。
 permalink: /
-
-hero:
-  name: MTNetwork Docs
-  text: 面向玩家与访客的公开文档
-  tagline: 非营利、原版优先、Java 与 Bedrock 同服。这里集中说明加入方式、基础规则，以及 public.mcmtn.net 的公开记录页面。
-  image:
-    src: /mtn-brand.png
-    alt: MTNetwork
-  actions:
-    - theme: brand
-      text: 开始使用
-      link: /getting-started/server-intro
-    - theme: alt
-      text: 查看公开记录
-      link: /public-records/site-overview
-    - theme: alt
-      text: 打开主站
-      link: https://public.mcmtn.net/
-
-features:
-  - icon: 01
-    title: 非营利社区运营
-    details: 服务器以长期生存和社区协作为核心，不以捷径经济和快消玩法为导向。
-  - icon: 02
-    title: 原版优先生存
-    details: 核心体验保持原版生存节奏，功能增强服务于公平与公开，而不是取代玩法本身。
-  - icon: 03
-    title: Java 与 Bedrock 同服
-    details: 两端玩家进入同一世界，共享历史、建筑和公开记录。
-  - icon: 04
-    title: 主站公开记录
-    details: 玩家档案、排行榜、在线状态、热力图和画廊都在主站上持续公开。
+sidebar: false
+aside: false
+outline: false
+lastUpdated: false
+article: false
+pageClass: mtn-home-doc
 ---
+
+<div class="mtn-home-hero">
+  <div class="mtn-home-hero__body">
+    <p class="mtn-home-kicker">MTNetwork Public Docs</p>
+    <h1>MTNetwork Docs</h1>
+    <p class="mtn-home-hero__lead">
+      非营利、原版优先、Java 与 Bedrock 同服。这里集中说明加入方式、基础规则，以及
+      public.mcmtn.net 的公开记录页面。
+    </p>
+    <div class="mtn-home-hero__actions">
+      <a class="mtn-home-hero__action mtn-home-hero__action--brand" href="/getting-started/server-intro">开始使用</a>
+      <a class="mtn-home-hero__action" href="/public-records/site-overview">查看公开记录</a>
+      <a class="mtn-home-hero__action" href="https://public.mcmtn.net/">打开主站</a>
+    </div>
+  </div>
+
+  <div class="mtn-home-hero__aside">
+    <img class="mtn-home-hero__logo" src="/mtn-brand.png" alt="MTNetwork" />
+    <div class="mtn-home-hero__stats">
+      <article class="mtn-home-hero__stat">
+        <strong>非营利社区运营</strong>
+        <span>长期生存和公共协作高于短期刺激与快消玩法。</span>
+      </article>
+      <article class="mtn-home-hero__stat">
+        <strong>原版优先生存</strong>
+        <span>功能增强用于保证公平、公开和跨端可读性。</span>
+      </article>
+      <article class="mtn-home-hero__stat">
+        <strong>Java 与 Bedrock 同服</strong>
+        <span>不同客户端进入同一世界，共享同一份历史记录。</span>
+      </article>
+      <article class="mtn-home-hero__stat">
+        <strong>主站公开记录</strong>
+        <span>玩家档案、排行榜、在线状态与热力图长期公开。</span>
+      </article>
+    </div>
+  </div>
+</div>
 
 <div class="mtn-home-shell">
   <section class="mtn-home-section">
