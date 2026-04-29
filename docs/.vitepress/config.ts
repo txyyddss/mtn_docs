@@ -6,7 +6,7 @@ import { teekConfig } from "./teekConfig";
 
 const siteTitle = "MTNetwork Docs";
 const siteDescription =
-  "MTNetwork 面向玩家与访客的公开文档。";
+  "MTNetwork WIKI。";
 const siteUrl = "https://docs.mcmtn.net";
 const logoPath = "/mtn-brand.png";
 const ogImage = `${siteUrl}/mtn-brand.png`;
@@ -187,38 +187,6 @@ export default defineConfig({
       prev: "上一页",
       next: "下一页",
     },
-    nav: [
-      { text: "首页", link: "/" },
-      {
-        text: "开始使用",
-        link: "/getting-started/server-intro",
-        activeMatch: "^/getting-started/",
-      },
-      {
-        text: "玩家指南",
-        link: "/player-guide/survival-philosophy",
-        activeMatch: "^/player-guide/",
-      },
-      {
-        text: "网站与公开记录",
-        link: "/public-records/site-overview",
-        activeMatch: "^/public-records/",
-      },
-      {
-        text: "常见问题",
-        link: "/faq/common-questions",
-        activeMatch: "^/faq/",
-      },
-      {
-        text: "腐竹的奇思妙想",
-        link: "/brainstorm/currency",
-        activeMatch: "^/brainstorm/",
-      },
-      {
-        text: "主站",
-        link: "https://public.mcmtn.net/",
-      },
-    ],
     search: {
       provider: "local",
       options: {
@@ -242,7 +210,7 @@ export default defineConfig({
     editLink: false,
     footer: {
       message:
-        "MTNetwork Docs 面向公开玩家与访客，文档内容以主站实际页面与公告为准。",
+        "MTNetwork Docs。",
       copyright: "Copyright © 2024-present MTNetwork",
     },
   },
